@@ -5,13 +5,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TFIDFResult {
-    Map<String, BigDecimal> tfidfValue=new HashMap<>();
+    Map<Long,Map<String, BigDecimal>> tfidfValue=new HashMap<>();
 
-    public Map<String, BigDecimal> getTfidfValue() {
+    public Map<Long, Map<String, BigDecimal>> getTfidfValue() {
         return tfidfValue;
     }
 
-    public void setTfidfValue(Map<String, BigDecimal> tfidfValue) {
+    public void setTfidfValue(Map<Long, Map<String, BigDecimal>> tfidfValue) {
         this.tfidfValue = tfidfValue;
     }
 }
