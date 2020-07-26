@@ -47,9 +47,9 @@ public class TFIDFAnalyzer {
         }
         //TFIDF値計算
         for(Long no:tfWordCount.keySet()) {
-            Map<String, BigDecimal> tfidfItem=new HashMap<>();
             for (String word : tfWordCount.get(no).keySet()) {
-                tfidfItem.put(word, (
+
+                result.addValue(no,word,(
                         BigDecimal.valueOf(tfWordCount.get(no).get(word))
                                 .divide(sentenceCount.get(no.longValue()),10, BigDecimal.ROUND_HALF_UP)
                 ).multiply(
@@ -58,8 +58,9 @@ public class TFIDFAnalyzer {
                                         .divide(BigDecimal.valueOf(sentenceWordlist.get(word)),10, BigDecimal.ROUND_HALF_UP).doubleValue()
                         ) + 1)));
             }
-            result.getTfidfValue().put(no,tfidfItem);
+
         }
+        result.sort();
         return result;
     }
 
