@@ -56,7 +56,7 @@ public class TFIDFAnalyzer {
                         BigDecimal.valueOf(Math.log(
                                 BigDecimal.valueOf(input.getSentenceList().size())
                                         .divide(BigDecimal.valueOf(sentenceWordlist.get(word)),10, BigDecimal.ROUND_HALF_UP).doubleValue()
-                        ) + 1)));
+                        )).add(input.getWeight())));
             }
 
         }

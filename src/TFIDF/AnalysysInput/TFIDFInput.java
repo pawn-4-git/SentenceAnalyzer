@@ -1,5 +1,6 @@
 package TFIDF.AnalysysInput;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -7,6 +8,7 @@ import java.util.Map;
 public class TFIDFInput {
     private long sentenceCounter=0;
     private Map<Integer, List<String>> sentenceList=new HashMap<>();
+    private BigDecimal weight=BigDecimal.ONE;
 
     public long getSentenceCounter() {
         return sentenceCounter;
@@ -27,5 +29,13 @@ public class TFIDFInput {
     public void addSentence(List<String> sentence){
         sentenceList.put(sentenceList.keySet().size()+1,sentence);
 
+    }
+
+    public BigDecimal getWeight() {
+        return weight;
+    }
+
+    public void setWeight(BigDecimal weight) {
+        this.weight = weight;
     }
 }
